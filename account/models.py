@@ -2,6 +2,32 @@ from django.db import models
 
 # Create your models here.
 
+
+class DiscountAmount(models.Model):
+    # silver=models.CharField(max_length=250)
+    # gold=models.CharField(max_length=250)
+    # platinum=models.CharField(max_length=250)
+    level1 = models.IntegerField(default=0)
+    level2 = models.IntegerField(default=0)
+    level3 = models.IntegerField(default=0)
+    discount_per= models.IntegerField(default=0)
+
+class CustomerInfo(models.Model):
+    chasis_no = models.IntegerField( default=0)
+    c_id = models.CharField(max_length=100, blank=False)
+    password= models.CharField(max_length=100)
+    fname = models.CharField(max_length=50, default='')
+    lname = models.CharField(max_length=50, default='')
+
+class Promotions(models.Model):
+
+    promotion_type = models.CharField(max_length=50, default='')
+    image= models.ImageField(upload_to='profile_image', blank=False, default='')
+    description = models.TextField(max_length=1000, blank=False, default='')
+
+
+
+
 class User(models.Model):
 	username = models.CharField(max_length=250)
 	password = models.CharField(max_length= 250)
