@@ -25,9 +25,6 @@ class Promotions(models.Model):
     image= models.ImageField(upload_to='profile_image', blank=False, default='')
     description = models.TextField(max_length=1000, blank=False, default='')
 
-
-
-
 class User(models.Model):
 	username = models.CharField(max_length=250)
 	password = models.CharField(max_length= 250)
@@ -43,5 +40,12 @@ class Partner(models.Model):
 	Associted_person = models.CharField(max_length= 250)
 	email =models.CharField(max_length=270)
 	Phone_number =models.CharField(max_length=270)
+
+class Trasaction(models.Model):
+    CustomerInfo = models.ForeignKey(CustomerInfo, on_delete=models.CASCADE , null=True)
+    Partner = models.ForeignKey(Partner,on_delete=models.CASCADE)
+    Discount = models.CharField(max_length=100)
+    Total = models.CharField(max_length=100)
+
 
 
