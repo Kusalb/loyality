@@ -10,7 +10,7 @@ class User(models.Model):
 class offer(models.Model):
 	offer_Name = models.CharField(max_length=250)
 	Description = models.CharField(max_length= 400)
-	item = models.CharField(max_length=450)
+
 
 class Partner(models.Model):
 	Partener_company = models.CharField(max_length=250)
@@ -34,7 +34,7 @@ class CustomerInfo(models.Model):
     fname = models.CharField(max_length=50, default='')
     lname = models.CharField(max_length=50, default='')
 
-class Promotions(models.Model):
+class Promotion(models.Model):
 
     promotion_type = models.CharField(max_length=50, default='')
     image= models.ImageField(upload_to='profile_image', blank=False, default='')

@@ -11,7 +11,7 @@ from .models import DiscountAmount
 
 from .models import CustomerInfo
 
-from .models import Promotions
+from .models import Promotion
 
 from .models import Trasaction
 
@@ -21,6 +21,6 @@ admin.site.register(offer)
 admin.site.register(Partner)
 admin.site.register(DiscountAmount)
 admin.site.register(CustomerInfo)
-admin.site.register(Promotions)
+admin.site.register(Promotion)
 admin.site.register(Trasaction)
 
