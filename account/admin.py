@@ -9,7 +9,7 @@ from .models import Partner
 
 from .models import DiscountAmount
 
-from .models import CustomerInfo
+from .models import Customer
 
 from .models import Promotion
 
@@ -20,7 +20,7 @@ admin.site.register(User)
 admin.site.register(offer)
 admin.site.register(Partner)
 admin.site.register(DiscountAmount)
-admin.site.register(CustomerInfo)
+admin.site.register(Customer)
 admin.site.register(Promotion)
 admin.site.register(Trasaction)
 
