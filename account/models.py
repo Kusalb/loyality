@@ -22,10 +22,8 @@ class DiscountAmount(models.Model):
     # silver=models.CharField(max_length=250)
     # gold=models.CharField(max_length=250)
     # platinum=models.CharField(max_length=250)
-    level1 = models.IntegerField(default=0)
-    level2 = models.IntegerField(default=0)
-    level3 = models.IntegerField(default=0)
-    discount_per= models.IntegerField(default=0)
+    level = models.IntegerField(default=1)
+    discount_per= models.IntegerField(default=5)
 
 class Customer(models.Model):
     chasis_no = models.CharField(max_length=200)
