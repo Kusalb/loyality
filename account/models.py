@@ -7,6 +7,7 @@ class User(models.Model):
 	password = models.CharField(max_length= 250)
 	email =models.CharField(max_length=270)
 
+
 class offer(models.Model):
 	offer_Name = models.CharField(max_length=250)
 	Description = models.CharField(max_length= 400)
@@ -18,12 +19,14 @@ class Partner(models.Model):
 	email =models.CharField(max_length=270)
 	Phone_number =models.CharField(max_length=270)
 
-class DiscountAmount(models.Model):
-    # silver=models.CharField(max_length=250)
-    # gold=models.CharField(max_length=250)
-    # platinum=models.CharField(max_length=250)
-    level = models.IntegerField(default=1)
-    discount_per= models.IntegerField(default=5)
+class Discount(models.Model):
+    silver=models.CharField(max_length=250, default='')
+    gold=models.CharField(max_length=250 , default='')
+    platinum=models.CharField(max_length=250,default='')
+    # level1 = models.IntegerField(default=0)
+    # level2 = models.IntegerField(default=0)
+    # level3 = models.IntegerField(default=0)
+    # discount_per= models.IntegerField(default=0)
 
 class Customer(models.Model):
     chasis_no = models.CharField(max_length=200)

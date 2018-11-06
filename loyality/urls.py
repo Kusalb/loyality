@@ -15,13 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.contrib.auth.views import LoginView
 
 
 
-
+from rest_framework.urlpatterns import format_suffix_patterns
+from account import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('users/', views.UserList.as_view(), name='users'),
+    path('offers/', views.offerList.as_view(), name='offer'),
+    path('partners/', views.PartnerList.as_view(), name='Partner'),
+    path('promotions/', views.PromotionList.as_view(), name='Promotion'),
+    path('transactions/', views.PartnerList.as_view(), name='Trasaction'),
+
 
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
