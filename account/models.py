@@ -32,9 +32,10 @@ class Discount(models.Model):
 
 class Customer(models.Model):
     chasis_no = models.CharField(max_length=200)
-    password= models.CharField(max_length=100)
     first_name = models.CharField(max_length=50, default='')
     last_name = models.CharField(max_length=50, default='')
+    password= models.CharField(max_length=100)
+
 
 class Promotion(models.Model):
     Partner = models.ForeignKey(Partner, on_delete=models.CASCADE , null=True)
