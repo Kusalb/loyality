@@ -23,7 +23,7 @@ from account import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', views.WaiterList.as_view(), name='users'),
+    path('waiters/', views.WaiterList.as_view(), name='users'),
     path('offers/', views.offerList.as_view(), name='offer'),
     path('partners/', views.PartnerList.as_view(), name='Partner'),
     path('promotions/', views.PromotionList.as_view(), name='Promotion'),
