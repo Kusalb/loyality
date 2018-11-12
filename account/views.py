@@ -2,12 +2,12 @@ from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import User
+from .models import Waiter
 from .models import offer
 from .models import Partner
 from .models import Promotion
 from .models import Trasaction
-from .serializer import UserSerializer
+from .serializer import WaiterSerializer
 from .serializer import offerSerializer
 from .serializer import PartnerSerializer
 from .serializer import TransactionSerializer
@@ -16,11 +16,11 @@ from .serializer import PromotionSerializer
 
 # Create your views here.
 
-class UserList(APIView):
+class WaiterList(APIView):
 
     def get(self, request):
-        users = User.objects.all()
-        serializer = UserSerializer(users, many=True)
+        users = Waiter.objects.all()
+        serializer = WaiterSerializer(users, many=True)
         return Response(serializer.data)
 
     def post(self):

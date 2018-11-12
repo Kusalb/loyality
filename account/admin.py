@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.models import Group
 
 # Register your models here.
-from .models import User
+from .models import Waiter
 
 from .models import offer
 
@@ -17,7 +17,7 @@ from .models import Promotion
 from .models import Trasaction
 
 
-admin.site.register(User)
+admin.site.register(Waiter)
 admin.site.register(offer)
 admin.site.register(Partner)
 admin.site.register(Discount)

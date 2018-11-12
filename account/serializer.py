@@ -1,15 +1,15 @@
 from rest_framework import serializers
 
-from .models import User
+from .models import Waiter
 from .models import offer
 from .models import Partner
 from .models import Trasaction
 from .models import Promotion
 
-class UserSerializer(serializers.ModelSerializer):
+class WaiterSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = User
+        model = Waiter
         fields = ('username', 'email')
         # fields = '__all__'
         # for returning all values

@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class User(models.Model):
+class Waiter(models.Model):
 	username = models.CharField(max_length=250)
 	password = models.CharField(max_length= 250)
 	email = models.EmailField()
@@ -39,7 +39,7 @@ class Customer(models.Model):
 
 class Promotion(models.Model):
     Partner = models.ForeignKey(Partner, on_delete=models.CASCADE , null=True)
-    promotion_type = models.CharField(max_length=50, default='')
+    Approved_list = models.BooleanField(default=False)
     image= models.ImageField(upload_to='profile_image', default='')
     description = models.TextField(max_length=1000, default='')
 
