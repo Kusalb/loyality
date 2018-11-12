@@ -39,6 +39,7 @@ class Customer(models.Model):
 
 class Promotion(models.Model):
     Partner = models.ForeignKey(Partner, on_delete=models.CASCADE , null=True)
+    Valid_till = models.CharField(max_length=100 , default= '')
     Approved_list = models.BooleanField(default=False)
     image= models.ImageField(upload_to='profile_image', default='')
     description = models.TextField(max_length=1000, default='')
