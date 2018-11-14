@@ -14,14 +14,14 @@ class Partner(models.Model):
 	Phone_number =models.CharField(max_length=270)
 
 class offer(models.Model):
-
     Partner = models.ForeignKey(Partner, on_delete=models.CASCADE, null=True)
     offer_Name = models.CharField(max_length=250)
-    Description = models.CharField(max_length= 400)
+    Description = models.CharField(max_length=400)
 
 
 class Discount(models.Model):
     Partner = models.ForeignKey(Partner, on_delete=models.CASCADE)
+
     silver=models.CharField(max_length=250, default='')
     gold=models.CharField(max_length=250 , default='')
     platinum=models.CharField(max_length=250,default='')
@@ -39,7 +39,7 @@ class Customer(models.Model):
 
 class Promotion(models.Model):
     Partner = models.ForeignKey(Partner, on_delete=models.CASCADE , null=True)
-    Valid_till = models.CharField(max_length=100 , default= '')
+    Valid_till = models.DateField()
     Approved_list = models.BooleanField(default=False)
     image= models.ImageField(upload_to='profile_image', default='')
     description = models.TextField(max_length=1000, default='')

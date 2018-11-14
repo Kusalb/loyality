@@ -14,6 +14,7 @@ from .serializer import TransactionSerializer
 from .serializer import PromotionSerializer
 
 
+
 # Create your views here.
 
 class WaiterList(APIView):
@@ -23,8 +24,11 @@ class WaiterList(APIView):
         serializer = WaiterSerializer(users, many=True)
         return Response(serializer.data)
 
-    def post(self):
-        pass
+    def post(self, request):
+        users = Waiter.objects.all()
+        serializer = WaiterSerializer(users, many=True)
+        return Response(serializer.data)
+
 
 class offerList(APIView):
     def get(self, request):
@@ -32,8 +36,10 @@ class offerList(APIView):
         serializer = offerSerializer(offers, many=True)
         return Response(serializer.data)
 
-    def post(self):
-        pass
+    def post(self, request):
+        offers = offer.objects.all()
+        serializer = offerSerializer(offers, many=True)
+        return Response(serializer.data)
 
 
 class PromotionList(APIView):
@@ -42,8 +48,11 @@ class PromotionList(APIView):
         serializer = PromotionSerializer(promotions, many=True)
         return Response(serializer.data)
 
-    def post(self):
-        pass
+    def post(self, request):
+        promotions = Promotion.objects.all()
+        serializer = PromotionSerializer(promotions, many=True)
+        return Response(serializer.data)
+
 
 class PartnerList(APIView):
     def get(self, request):
@@ -51,11 +60,10 @@ class PartnerList(APIView):
         serializer = PartnerSerializer(partners, many=True)
         return Response(serializer.data)
 
-    def post(self):
-        pass
-
-
-
+    def post(self, request):
+        partners = Partner.objects.all()
+        serializer = PartnerSerializer(partners, many=True)
+        return Response(serializer.data)
 
 
 class TransactionList(APIView):
@@ -64,6 +72,9 @@ class TransactionList(APIView):
         serializer = TransactionSerializer(Trasactions, many=True)
         return Response(serializer.data)
 
-    def post(self):
-        pass
+    def post(self, request):
+        Trasactions = Trasaction.objects.all()
+        serializer = TransactionSerializer(Trasactions, many=True)
+        return Response(serializer.data)
+
 

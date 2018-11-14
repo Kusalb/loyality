@@ -29,6 +29,10 @@ INSTALLED_APPS = [
     'loyality',
     'account',
     'rest_framework',
+    'rest_framework.authtoken'
+
+
+
 ]
 
 MIDDLEWARE = [
@@ -60,6 +64,23 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'loyality.wsgi.application'
+
+
+#Authetication for API
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        # 'rest_framework.authentication.TokenAuthentication',
+    ),
+}
+
+
+
 
 
 # Database

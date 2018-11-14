@@ -1,5 +1,8 @@
 from rest_framework import serializers
 
+
+
+
 from .models import Waiter
 from .models import offer
 from .models import Partner
@@ -13,6 +16,7 @@ class WaiterSerializer(serializers.ModelSerializer):
         fields = ('username', 'email')
         # fields = '__all__'
         # for returning all values
+
 
 
 class offerSerializer(serializers.ModelSerializer):
