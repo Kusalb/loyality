@@ -24,10 +24,8 @@ class WaiterList(APIView):
         serializer = WaiterSerializer(users, many=True)
         return Response(serializer.data)
 
-    def post(self, request):
-        users = Waiter.objects.all()
-        serializer = WaiterSerializer(users, many=True)
-        return Response(serializer.data)
+    def post(self):
+        pass
 
 
 class offerList(APIView):
@@ -37,9 +35,7 @@ class offerList(APIView):
         return Response(serializer.data)
 
     def post(self, request):
-        offers = offer.objects.all()
-        serializer = offerSerializer(offers, many=True)
-        return Response(serializer.data)
+        pass
 
 
 class PromotionList(APIView):
@@ -49,9 +45,7 @@ class PromotionList(APIView):
         return Response(serializer.data)
 
     def post(self, request):
-        promotions = Promotion.objects.all()
-        serializer = PromotionSerializer(promotions, many=True)
-        return Response(serializer.data)
+        pass
 
 
 class PartnerList(APIView):
@@ -61,9 +55,7 @@ class PartnerList(APIView):
         return Response(serializer.data)
 
     def post(self, request):
-        partners = Partner.objects.all()
-        serializer = PartnerSerializer(partners, many=True)
-        return Response(serializer.data)
+        pass
 
 
 class TransactionList(APIView):
@@ -73,8 +65,6 @@ class TransactionList(APIView):
         return Response(serializer.data)
 
     def post(self, request):
-        Trasactions = Trasaction.objects.all()
-        serializer = TransactionSerializer(Trasactions, many=True)
-        return Response(serializer.data)
+        pass
 
 
