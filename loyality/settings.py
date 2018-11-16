@@ -29,7 +29,9 @@ INSTALLED_APPS = [
     'loyality',
     'account',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'django_filters'
+
 
 
 
