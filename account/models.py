@@ -16,7 +16,6 @@ class Partner(models.Model):
     Phone_number = models.CharField(max_length=270)
 
 
-
 class offer(models.Model):
     Partner = models.ForeignKey(Partner, on_delete=models.CASCADE, null=True)
     offer_Name = models.CharField(max_length=250)
@@ -59,3 +58,19 @@ class Trasaction(models.Model):
     Partner = models.ForeignKey(Partner, on_delete=models.CASCADE)
     Discount = models.CharField(max_length=100)
     Total = models.CharField(max_length=100)
+
+
+# for creating superadmin
+
+class Superadmin(models.Model):
+    Username = models.CharField(max_length=100)
+    Email = models.EmailField()
+    password = models.CharField(max_length=100)
+
+
+# for creating vespa admin
+
+class Vespaadmnin(models.Model):
+    Username = models.CharField(max_length=100)
+    Email = models.EmailField()
+    password = models.CharField(max_length=100)
