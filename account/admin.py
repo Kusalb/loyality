@@ -16,6 +16,8 @@ from .models import Promotion
 
 from .models import Trasaction
 
+from .models import UserId
+
 
 admin.site.register(Waiter)
 admin.site.register(offer)
@@ -24,6 +26,7 @@ admin.site.register(Discount)
 admin.site.register(Customer)
 admin.site.register(Promotion)
 admin.site.register(Trasaction)
+admin.site.register(UserId)
 
 admin.site.unregister(Group)
 

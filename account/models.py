@@ -74,3 +74,11 @@ class Vespaadmnin(models.Model):
     Username = models.CharField(max_length=100)
     Email = models.EmailField()
     password = models.CharField(max_length=100)
+
+class UserId(models.Model):
+    engine_no = models.CharField(max_length=200, default='', null=False)
+    first_name = models.CharField(max_length=50, default='')
+
+
+    def __str__(self):
+        return self.engine_no + "-" + self.first_name

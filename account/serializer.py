@@ -10,6 +10,7 @@ from .models import Trasaction
 from .models import Promotion
 from .models import Customer
 from .models import Discount
+from .models import UserId
 
 class WaiterSerializer(serializers.ModelSerializer):
 
@@ -54,4 +55,10 @@ class DiscountSerializer(serializers.ModelSerializer):
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model= Customer
+        fields= '__all__'
+
+
+class UserIdSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= UserId
         fields= '__all__'
