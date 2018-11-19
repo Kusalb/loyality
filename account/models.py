@@ -10,7 +10,7 @@ class Waiter(models.Model):
 
 
 class Partner(models.Model):
-    Partener_company = models.CharField(max_length=250)
+    Partner_company = models.CharField(max_length=250)
     Associted_person = models.CharField(max_length=250)
     email = models.EmailField()
     Phone_number = models.CharField(max_length=270)
