@@ -36,10 +36,14 @@ class Discount(models.Model):
 
 
 class Customer(models.Model):
-    chasis_no = models.CharField(max_length=200)
+    engine_no = models.CharField(max_length=200,default='', null=False)
+    chasis_no = models.CharField(max_length=200,default='', null=False)
+    phone_no = models.CharField(max_length=15, default='', null=False)
     first_name = models.CharField(max_length=50, default='')
     last_name = models.CharField(max_length=50, default='')
-    password = models.CharField(max_length=100)
+    address = models.CharField(max_length=200, default='')
+    dob = models.DateField
+    email = models.EmailField(max_length=100, default='')
 
 
 class Promotion(models.Model):

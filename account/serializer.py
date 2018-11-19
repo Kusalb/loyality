@@ -8,6 +8,8 @@ from .models import offer
 from .models import Partner
 from .models import Trasaction
 from .models import Promotion
+from .models import Customer
+from .models import Discount
 
 class WaiterSerializer(serializers.ModelSerializer):
 
@@ -43,3 +45,13 @@ class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Trasaction
         fields = '__all__'
+
+class DiscountSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= Discount
+        fields= '__all__'
+
+class CustomerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= Customer
+        fields= '__all__'

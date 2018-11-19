@@ -7,11 +7,15 @@ from .models import offer
 from .models import Partner
 from .models import Promotion
 from .models import Trasaction
+from.models import Discount
+from .models import Customer
 from .serializer import WaiterSerializer
 from .serializer import offerSerializer
 from .serializer import PartnerSerializer
 from .serializer import TransactionSerializer
 from .serializer import PromotionSerializer
+from.serializer import DiscountSerializer
+from.serializer import CustomerSerializer
 
 
 
@@ -68,3 +72,23 @@ class TransactionList(APIView):
         pass
 
 
+
+class DiscountList(APIView):
+
+    def get(self,request):
+        user1= Discount.objects.all()
+        serializer1 = DiscountSerializer(user1, many=True)
+        return Response (serializer1.data)
+
+    def post(self):
+        pass
+
+class CustomerList(APIView):
+
+    def get(self,request):
+        user2= Customer.objects.all()
+        serializer2 = CustomerSerializer(user2, many=True)
+        return Response (serializer2.data)
+
+    def post(self):
+        pass
