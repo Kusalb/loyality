@@ -1,6 +1,9 @@
 from django.shortcuts import get_object_or_404
+from django.shortcuts import redirect, render
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from django.urls import reverse_lazy
+from django.http.response import HttpResponse
 from rest_framework import status
 from .models import Waiter
 from .models import offer
@@ -18,9 +21,14 @@ from .serializer import PromotionSerializer
 from.serializer import DiscountSerializer
 from.serializer import CustomerSerializer
 from .serializer import UserIdSerializer
+# from django.urls import path
+# from . import views
 
 
+from .forms import CustomUserCreationForm
+from django.views import generic
 
+# from django.template import  loader
 # Create your views here.
 
 class WaiterList(APIView):
@@ -105,3 +113,17 @@ class UserIdList(APIView):
 
     def post(self):
         pass
+
+
+# def LoginView(request):
+#
+#     return render(request, 'login/login.html')
+
+
+class SignUp(generic.CreateView):
+    form_class = CustomUserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'signup.html'
+
+
+

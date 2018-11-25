@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
@@ -62,18 +62,18 @@ class Trasaction(models.Model):
 
 # for creating superadmin
 
-class Superadmin(models.Model):
-    Username = models.CharField(max_length=100)
-    Email = models.EmailField()
-    password = models.CharField(max_length=100)
+# class Superadmin(models.Model):
+#     Username = models.CharField(max_length=100)
+#     Email = models.EmailField()
+#     password = models.CharField(max_length=100)
 
 
 # for creating vespa admin
 
-class Vespaadmnin(models.Model):
-    Username = models.CharField(max_length=100)
-    Email = models.EmailField()
-    password = models.CharField(max_length=100)
+# class Vespaadmnin(models.Model):
+#     Username = models.CharField(max_length=100)
+#     Email = models.EmailField()
+#     password = models.CharField(max_length=100)
 
 class UserId(models.Model):
     engine_no = models.CharField(max_length=200, default='', null=False)
@@ -82,3 +82,18 @@ class UserId(models.Model):
 
     def __str__(self):
         return self.engine_no + "-" + self.first_name
+
+
+
+class CustomUser(AbstractUser):
+    is_Superadmin = models.BooleanField('Superadmin status', default=False)
+    is_Vespadmin = models.BooleanField('Vespaadmin status', default=False)
+    is_Partner = models.BooleanField('Partner status', default=False)
+    is_Waiter = models.BooleanField('Waiter status', default=False)
+    is_Customer = models.BooleanField('Customer status', default=False)
+    Username = models.CharField(max_length=200, default='')
+    Password = models.CharField(max_length=200, default='')
+
+
+    def __str__(self):
+        return self.email

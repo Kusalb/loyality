@@ -1,13 +1,13 @@
 
 from django.contrib import admin
-from django.urls import path
-from account import views
+from django.urls import path , include
+# from account import views
 
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
 )
 
-
+from django.views.generic.base import TemplateView
 
 
 from rest_framework.urlpatterns import format_suffix_patterns
@@ -24,15 +24,22 @@ urlpatterns = [
     path('customer/', views.CustomerList.as_view()),
     path('userid/', views.UserIdList.as_view()),
 
+    # path('login/', views.LoginView, name='login'),
+
+
 
 
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
 
 
 
-
-
-
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('admin/', admin.site.urls),
+    path('users/', include('account.urls')),
+    path('users/', include('django.contrib.auth.urls')),
 ]
+
+
+
 
 urlpatterns = format_suffix_patterns(urlpatterns)

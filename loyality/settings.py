@@ -141,10 +141,10 @@ STATIC_URL = '/static/'
 
 
 
+AUTH_USER_MODEL = 'account.CustomUser' # new
 
-
-
-
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 
 
 
