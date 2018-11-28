@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 from django.urls import path , include
-# from account import views
+from django.conf.urls import url
 
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -23,6 +23,13 @@ urlpatterns = [
     path('discount/', views.DiscountList.as_view()),
     path('customer/', views.CustomerList.as_view()),
     path('userid/', views.UserIdList.as_view()),
+
+    url(r'^partner/', include('account.urls')),
+    url(r'^waiter/', include('account.urls')),
+    url(r'^promotion/', include('account.urls')),
+
+
+
 
     # path('login/', views.LoginView, name='login'),
 

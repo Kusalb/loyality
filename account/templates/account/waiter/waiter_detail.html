@@ -1,0 +1,12 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+    <div class="post">
+		{% if user.is_authenticated %}
+			<a class="btn btn-default" href="{% url 'waiter_edit' pk=waiters.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+		{% endif %}
+	            <p>Username {{ waiters.username}}</p>
+                <p>Password : {{ waiters.password}}</p>
+                <p>Email {{ waiters.email}}</p>
+	</div>
+{% endblock %}

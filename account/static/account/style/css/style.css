@@ -1,0 +1,196 @@
+html, body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-family: Roboto;
+}
+/*#####################################header css##################################*/
+.header{
+    height: 8%;
+    background: #34383c;
+    width: 100%;
+}
+.header-font{
+    color:#ffffff;
+    margin-right: 4%;
+}
+.header-menu{
+    height: 100%;
+}
+.logo{
+    height: 100%;
+    width: 5%;
+    margin-right: 2%;
+}
+.user-account{
+    height: 100%;
+    background: #1e2226;
+    float: right;
+    width: 15%;
+    padding-top:1%;
+}
+.icon-image{
+    width: 24px;
+    height: 24px;
+}
+
+/*style for user account*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+
+    display: none;
+    position: absolute;
+    background-color: #1e2226;
+    color: #ffffff;
+    min-width: 100%;
+    z-index: 1;
+    right: 0;
+    margin-top:6%;
+
+}
+.dropdown-content li{
+    list-style: none;
+}
+.dropdown-content li a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.dropdown-content li a:hover{
+    color: #1e2226;
+    background-color: #fff200;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.profile-img-header{
+    border-radius: 45%;
+    height: 25px;
+    width: 25px;
+    margin-left: 5%;
+}
+.profile-img{
+    height: 80px;
+    width: 70px;
+    padding-top: 15%;
+    padding-left: 10%;
+}
+.user-name-header{
+    color: #ffffff;
+    margin-left: 6%;
+}
+.user-name-header a:hover{
+    color: #51575c;
+    text-decoration: none;
+}
+.logout-btn{
+    background: #239249;
+    color: #ffffff
+}
+.logout-btn:hover{
+    background: #98312a;
+}
+/*##########################################header css ends###########################*/
+/*main-content*/
+#wrapper{
+    min-height: 100%;
+}
+#page-content-wrapper{
+    width:95%;
+    min-height: 100%;
+    position: relative;
+    padding: 15px;
+    margin-left: 5%;
+    background-color: #f1f1f1;
+    /*height: auto;*/
+}
+.section-wrapper{
+    background: #FFFFFF;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    overflow: auto;
+    box-shadow: 0 12px 18px rgba(0,0,0,0.12);
+}
+.half-section-wrapper{
+    background: #FFFFFF;
+    width: 49%;
+    float: right;
+    margin-right:1%;
+    margin-bottom: 20px;
+    padding: 15px;
+    overflow: auto;
+    box-shadow: 0 12px 18px rgba(0,0,0,0.12);
+
+}
+.no-left-margin{
+    margin-left: 0!important;
+}
+.no-pad{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.no-margin{
+    margin-left: 0;
+    margin-right: 0;
+}
+.bottom-mark{
+    border-bottom: 1px darkgrey solid;
+
+}
+.no-side-pad{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/*##############################footer css#############################################*/
+.footer{
+    width:100%;
+    height: auto;
+    margin: auto;
+    background: #1e2226;
+    padding: 20px 0px;
+    position: relative;
+    clear: both;
+}
+.footer-social-icon{
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+.footer-social-icon ul{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+.footer-social-icon ul li{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0px 1px;
+}
+.footer-menu{
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+.footer-menu ul{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+.footer-menu ul li{
+    color: #ffffff;
+    display: inline-block;
+    margin: 0px 5px 25px;
+}
+/*##############################footer css ends#############################################*/

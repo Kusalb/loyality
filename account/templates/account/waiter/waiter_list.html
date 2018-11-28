@@ -1,16 +1,10 @@
-
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
-
 {% block content %}
-    {% load staticfiles %}
-{% if user.is_authenticated %}
-
-    <div id="wrapper">
+<div id="wrapper">
 <!--        Horizontal Header-->
         <div class="header ">
-
+            {% load staticfiles %}
             <img src="{% static 'account/images/logo.jpg'%}" class="logo" id="menu-toggle">
             <a href="{% url 'waiter_new' %}" class="header-font">+Add Waiters</a>
             <a href="#" class="header-font">User Preference</a>
@@ -65,9 +59,35 @@
 
         </div>
 <!--discrptive side nav bar ends here-->
+{#            <a style="padding-left: 800px" href="{% url 'waiter_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus">ADD </span></a>#}
+    <div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Password</th>
+            <th scope="col">Email</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        {% for waiter in waiters %}
+            <tbody>
 
+            <tr>
+            <td> {{ waiter.username }}</td>
+            <td>{{ waiter.password }}</td>
+            <td>{{ waiter.email }}</td>
+            <td><a href="{% url 'waiter_edit' pk=waiter.pk %}"><span class="glyphicon glyphicon-edit"></span></a></td>
+            <td><a href="{% url 'waiter_delete' pk=waiter.pk %}"  onclick="return confirm('Are u sure?')"><span class="glyphicon glyphicon-trash"></span></a></td>
 
-    <script>
+        {% endfor %}
+
+        </tr>
+        </tbody>
+    </table>
+    </div>
+      <script>
 //        script to trigger discrptive side nav bar
         $("#menu-toggle").click(function (e) {
             var Count= 0
@@ -93,15 +113,9 @@
         };
         //        script for logout ends
     </script>
-    </div>
-{% else %}
-
-
-    <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a> |
-  <a href="{% url 'signup' %}">signup</a>
-{% endif %}
-
 
 {% endblock %}
+
+
+{#('post_detail', pk=post.pk)#}
 

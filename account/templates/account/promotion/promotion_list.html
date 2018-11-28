@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+            <a style="padding-left: 800px" href="{% url 'promotion_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus">ADD </span></a>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Partner</th>
+            <th scope="col">Valid Till</th>
+            <th scope="col">Approved</th>
+{#            <th scope="col">Image</th>#}
+            <th scope="col">Description</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        {% for promotions in promotion %}
+            <tbody>
+
+            <tr>
+            <td> {{ promotions.Partner }}</td>
+            <td>{{ promotions.Valid_till }}</td>
+            <td>{{ promotions.Approved }}</td>
+{#            <td>{{ promotions.image}}</td>#}
+            <td>{{ promotions.description }}</td>
+            <td><a href="{% url 'promotion_edit' pk=promotions.pk %}"><span class="glyphicon glyphicon-edit"></span></a></td>
+            <td><a href="{% url 'promotion_delete' pk=promotions.pk %}"  onclick="return confirm('Are u sure?')"><span class="glyphicon glyphicon-trash"></span></a></td>
+
+        {% endfor %}
+
+        </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

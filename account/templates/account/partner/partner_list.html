@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+            <a style="padding-left: 800px" href="{% url 'partner_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus">ADD </span></a>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Partner Company</th>
+            <th scope="col">Associated Person</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        {% for partner in partners %}
+            <tbody>
+
+            <tr>
+            <td> {{ partner.Partner_company }}</td>
+            <td>{{ partner.Associted_person }}</td>
+            <td>{{ partner.email }}</td>
+            <td>{{ partner.Phone_number}}</td>
+            <td><a href="{% url 'partner_edit' pk=partner.pk %}"><span class="glyphicon glyphicon-edit"></span></a></td>
+            <td><a href="{% url 'partner_delete' pk=partner.pk %}"  onclick="return confirm('Are u sure?')"><span class="glyphicon glyphicon-trash"></span></a></td>
+
+        {% endfor %}
+
+        </tr>
+        </tbody>
+    </table>
+
+{% endblock %}
+
+
+
+

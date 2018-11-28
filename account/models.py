@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.conf import settings
+from django import forms
+from django.utils import timezone
 
 # Create your models here.
 
@@ -52,6 +55,9 @@ class Promotion(models.Model):
     image = models.ImageField(upload_to='profile_image', default='')
     description = models.TextField(max_length=1000, default='')
 
+    def __str__(self):
+        return self.Partner.Partner_company
+
 
 class Trasaction(models.Model):
     Customer = models.ForeignKey(Customer, on_delete=models.CASCADE, null=True)
@@ -97,3 +103,4 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.email
+
