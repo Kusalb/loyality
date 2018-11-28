@@ -1,99 +1,9 @@
-
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
-
 {% block content %}
-    {% load staticfiles %}
+ {% load staticfiles %}
 {% if user.is_authenticated %}
 
-    <div id="wrapper">
-<!--        Horizontal Header-->
-        <div class="header ">
-
-            <img src="{% static 'account/images/logo.jpg'%}" class="logo" id="menu-toggle">
-            <a href="{% url 'waiter_new' %}" class="header-font">+Add Waiters</a>
-            <a href="#" class="header-font">User Preference</a>
-            <a href="#" class="header-font">Settings</a>
-<!--            User account on top right corner-->
-            <div class="dropdown user-account">
-                <img src="{% static 'account/images/pp.JPG' %}"  class="dropdown-toggle dropbtn profile-img-header" data-toggle="dropdown"  aria-expanded="true">
-                <a class="user-name-header" onclick="myFunction()"> {{ user.username }} <b class="caret"></b></a>
-
-                <div id="myDropdown" class="dropdown-content">
-
-
-                        <div class="col-md-12 pad-top no-side-pad ">
-                            <ul class="no-pad">
-                                <li class="bottom-mark"><a href="#">Account Setting</a></li>
-                                <li class="bottom-mark"><a href="#">Statistic</a></li>
-                                <li class="bottom-mark"><a href="#">Edit Profile</a></li>
-                                <li><a href="{% url 'logout' %}">Logout</a></li>
-                            </ul>
-<!--                            <p class="bottom-mark">Account Setting</p>-->
-<!--                            <p class="bottom-mark">Statistics</p>-->
-<!--                            <p class="bottom-mark">Edit Profile</p>-->
-<!--                            <p class="bottom-mark">Logout</p>-->
-<!--                            <a href="" class="no-pad"><button class="logout-btn">Logout</button></a>-->
-                        </div>
-
-                </div>
-            </div>
-        </div>
-    <!--        Header Ends here-->
-<!--        Default side nav bar starts-->
-        <div id="sidebar-wrapper-default">
-            <ul class="sidebar-nav-default">
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-            </ul>
-        </div>
-<!--        Default side nav bar ends here-->
-<!--Discriptive side navbar on clicking logo starts-->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li><a href="#">Dashboard</a></li>
-                <li><a  href="{% url 'promotion_list' %}">Promotion</a></li>
-                <li><a href={% url 'waiter_list' %}>Waiter</a></li>
-                <li><a href="#">Records</a></li>
-                <li><a href="#">Statistics</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-
-        </div>
-<!--discrptive side nav bar ends here-->
-
-
-    <script>
-//        script to trigger discrptive side nav bar
-        $("#menu-toggle").click(function (e) {
-            var Count= 0
-            e.preventDefault();
-            $("#wrapper").toggleClass("menuDisplayed");
-        });
-        //        script for logout starts
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
-        // Close the dropdown menu if the user clicks outside of it
-        window.onclick = function(event) {
-            if (!event.target.matches('.user-name-header')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        };
-        //        script for logout ends
-    </script>
-    </div>
 {% else %}
 
 
@@ -101,7 +11,13 @@
   <a href="{% url 'login' %}">login</a> |
   <a href="{% url 'signup' %}">signup</a>
 {% endif %}
-
-
 {% endblock %}
+
+
+{#{% block title %}Home{% endblock %}#}
+{##}
+{#{% block content %}#}
+
+
+{#{% endblock %}#}
 
